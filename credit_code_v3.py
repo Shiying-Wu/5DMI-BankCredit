@@ -1,6 +1,6 @@
 # credit_code_v3.py
 
-# 📦 Imports
+#  Imports
 import numpy as np
 import pandas as pd
 import warnings
@@ -10,10 +10,10 @@ from sklearn.tree import DecisionTreeClassifier
 from sklearn.metrics import confusion_matrix, accuracy_score, roc_auc_score
 from sklearn.model_selection import StratifiedKFold
 
-# ------------------ 📁 Load Original Data ------------------ #
+# ------------------ Load Original Data ------------------ #
 df = pd.read_csv("credit copy 1.csv")
 
-# ------------------ 🧠 Preprocessing (v3 Strategy) ------------------ #
+# ------------------ Preprocessing (v3 Strategy) ------------------ #
 
 # 1️⃣ Missing Flag + Imputation (Feature Creation + Aggregation)
 for col in ["duration", "residence", "cards"]:
@@ -25,7 +25,7 @@ cat_cols_with_na = df.select_dtypes("object").columns[df.select_dtypes("object")
 for col in cat_cols_with_na:
     df[col] = df[col].fillna("Missing")
 
-# 3️⃣ Label Encoding (Attribute Transformation)
+# 3️⃣ Label Encoding (Attribute Transformation) 
 for col in df.select_dtypes("object").columns:
     df[col] = df[col].astype("category").cat.codes
 
