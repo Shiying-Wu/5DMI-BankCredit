@@ -6,6 +6,7 @@ from sklearn.metrics import confusion_matrix, accuracy_score, roc_auc_score
 import matplotlib.pyplot as plt
 import seaborn as sns
 
+
 # ------------------ Load Processed Credit Data ------------------ #
 df = pd.read_csv("credit_processed_v4.csv")
 print(df.head())
@@ -66,4 +67,5 @@ plt.xlabel("Predicted")
 plt.ylabel("Actual")
 plt.tight_layout()
 plt.show()
+
 
